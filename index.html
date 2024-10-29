@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Face Mocap Web App</title>
+	<style>
+		/* Ensure the video and canvas are positioned correctly */
+		#webcam,
+		#outputCanvas {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 640px;
+			height: 480px;
+		}
+
+		/* Container for aligning the canvas and video together */
+		.video-container {
+			position: relative;
+			width: 640px;
+			height: 480px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Face Mocap Web App</h1>
+	<div class="video-container">
+		<video id="webcam" autoplay playsinline></video>
+		<canvas id="outputCanvas"></canvas>
+	</div>
+	<button id="record-button">Start Recording</button>
+	<button id="stop-button" disabled>Stop Recording</button>
+	<button id="export-button" disabled>Export Mocap Data</button>
+
+	<!-- Load MediaPipe's FaceLandmark library -->
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>
